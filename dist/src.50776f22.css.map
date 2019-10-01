@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.css"],"names":[],"mappings":"AAAA,cACI,gBAAiB,CACjB,WAAY,CACZ,UAEJ","file":"src.50776f22.css","sourceRoot":"../src","sourcesContent":[".list-display {\n    border: solid 4px;\n    height: 25em;\n    width: 45em;\n\n}"]}

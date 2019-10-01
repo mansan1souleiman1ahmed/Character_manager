@@ -1,0 +1,6 @@
+#list-display {
+    border: solid 4px;
+    height: 20em;
+    width: 25em;
+    overflow: scroll;
+}
