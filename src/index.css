@@ -1,6 +1,42 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+header {
+    order: 1;
+    margin-bottom: 20px;
+    widows: 100%;
+    background-color: red;
+
+}
+
+/* header,
+h1,
+button {
+    margin: auto;
+}
+ */
+
 #list-display {
-    border: solid 4px;
-    height: 20em;
-    width: 25em;
-    overflow: scroll;
+    order: 2;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.button-delete {
+    order: 3;
+
+}
+
+#list-display,
+ul {
+
+    list-style-type: none;
+
 }
