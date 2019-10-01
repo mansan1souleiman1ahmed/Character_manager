@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="test"></p>
+    <div class="form">
+        <form>
+            Name:<br>
+            <input type="text" name="name" id="name">
+            <br>
+            Short Description:
+            <br>
+            <input type="text" name="description" id="shortDesc">
+            <br>
+            Description:
+            <br>
+            <input type="text" name="description" id="description">
+            <br>
+            Image Url:
+            <br>
+            <input type="text" name="imageurl">
+            <br>
+            <input type="submit" id="create" onclick="createForm()" value="Submit">
+
+        </form>
+    </div>
+    <input type="file" id="files" name="files[]" multiple />
+    <output id="list"></output>
+    <script>
+        //Pour Vérifier si le navigateur supporte cette fonctionnalité.
+
+        if (window.File && window.FileReader && window.FileList && window.Blob) {
+            // Great success! All the File APIs are supported.
+        } else {
+            alert('The File APIs are not fully supported in this browser.');
+        }
+
+        function handleFileSelect(evt) {
+            var files = evt.target.files; // FileList object
+
+            // files is a FileList of File objects. List some properties.
+            var output = [];
+            for (var i = 0, f; f = files[i]; i++) {
+                output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ',
+                    f.size, ' bytes, last modified: ',
+                    f.lastModifiedDate ? f.lastModifiedDate.toLocaleDateString() : 'n/a',
+                    '</li>');
+            }
+            document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>';
+        }
+
+        document.getElementById('files').addEventListener('change', handleFileSelect, false);
+    </script>
+
+    <script src="../server/index.js"></script>
+</body>
+
+</html>
