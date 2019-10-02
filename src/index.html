@@ -2,52 +2,38 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="index.css">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" type="text/css" href="index.css" />
+  <title>Document</title>
 </head>
 
-</div>
-<div class="panel panel-primary">
-    <div class="panel-heading">GET Request</div>
-    <div class="panel-body">
-        <button class="btn btn-primary" onclick="performGetRequest1()">Get Todos</button>
-        <button class="btn btn-warning" onclick="clearOutput()">Clear</button>
-        <div class="panel-body" id="getResult1"></div>
-    </div>
-</div>
-<div class="panel panel-primary">
-    <div class="panel-heading">GET Request with Paramaters</div>
-    <div class="panel-body">
-        <div id="list-display"></div>
-        <input type="text" class="form-control" id="todoId" placeholder="Todo ID ..." /><br />
-        <button class="btn btn-primary" onclick="performGetRequest2()">Get Todos</button>
-        <button class="btn btn-warning" onclick="clearOutput()">Clear</button>
-        <div class="panel-body" id="getResult2"></div>
-    </div>
-</div>
-<div class="panel panel-primary">
-    <div class="panel-heading">POST Request</div>
-    <div class="panel-body">
-        <form class="form-inline" id="todoInputForm">
-            <div class="form-group">
-                <input type="text" class="form-control" id="todoTitle" placeholder="Todo Title ...">
-            </div>
-            <button type="submit" class="btn btn-primary">Send</button>
-        </form><br />
-        <button class="btn btn-warning" onclick="clearOutput()">Clear</button>
-        <div class="panel-body" id="postResult"></div>
-    </div>
-</div>
-
-</div>
-
 <body>
-    <h1>Hello world!</h1>
+  <header class="navbar-fixed-top cbp-af-header">
+    <nav class="nav">
+      <input type="checkbox" class="nav__cb" id="menu-cb" />
+      <div class="nav__content">
+        <ul class="nav__items">
+          <li class="nav__item">
+            <span class="nav__item-text"><a href='create-character.html'> Create</a>
 
-    <script src="../server/index.js"></script>
+            </span>
+          </li>
+        </ul>
+      </div>
+      <label class="nav__btn" for="menu-cb"></label>
+    </nav>
+  </header>
+  <div id="list-display"></div>
+  <div class="button-delete">
+
+  </div>
+
+  <script src="../server/index.js"></script>
+  <script src="../server/edit.js"></script>
+  <script src="../server/delete.js"></script>
+  <script src="../server/view.js"></script>
 </body>
 
 </html>

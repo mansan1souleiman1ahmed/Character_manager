@@ -1834,15 +1834,15 @@ module.exports = require('./lib/axios');
 var axios = require("axios");
 
 var BASE_URL = "https://character-database.becode.xyz";
-var output;
+var view;
 axios.get("".concat(BASE_URL, "/characters")).then(function (response) {
+  // console.log(response);
   return response;
 }).then(function (resp) {
-  output = "<h2>Characters</h2>";
-  console.log(resp.data);
+  // console.log(resp.data);
+  output = "<h2></h2>";
   resp.data.forEach(function (characters) {
-    output += "\n     <p>Name: ".concat(characters.name, "</p>\n     <p>Description: ").concat(characters.description, "</p>\n     <img src=\"").concat(characters.url, "\"/>\n    \n    ");
-    console.log(output);
+    output += "\n      <br>\n      <div class=\"character\" data-id=".concat(characters.id, "> \n      <span>\n     <li class=\"character-name\"><span class=\"list-description\">Name:</span> <span>").concat(characters.name, "</span></li>\n     <li><span class=\"list-description\">Description:</span> ").concat(characters.description, "</li>\n    <li><img width=\"250px\" height=\"250px\" src=\"data:image/png;base64,").concat(characters.image, "\"/></li>\n     </ul>\n     <button id=\"view-button\">View</button>\n     <button id=\"edit-button\">Edit</button>\n     <button class=\"delete-button\">Delete </button>\n     </div>\n    ");
   });
   document.getElementById("list-display").innerHTML = output;
 });
@@ -1874,7 +1874,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "38289" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "41661" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link href="index.css" rel="stylesheet">
+
+  <title>Document</title>
+</head>
+
+<body>
+  <header class="navbar-fixed-top cbp-af-header">
+    <nav class="nav">
+      <input type="checkbox" class="nav__cb" id="menu-cb" />
+      <div class="nav__content">
+        <ul class="nav__items">
+          <li class="nav__item">
+            <span class="nav__item-text"><a href='index.html'>Home</a>
+
+            </span>
+          </li>
+        </ul>
+      </div>
+      <label class="nav__btn" for="menu-cb"></label>
+    </nav>
+  </header>
+
+  <div class="form">
+    <form id="form-id">
+      Name:<br />
+      <input type="text" id="name" />
+      <br />
+      Description:
+      <br />
+      <input type="text" id="description" />
+      <br />
+      Image Url:
+      <br />
+      <input type="text" name="imageurl" />
+      <br />
+      <button id="create" type="submit">Submit</button>
+    </form>
+    <input type="file" id="files" name="files[]" multiple />
+    <output id="list"></output>
+  </div>
+
+  <script>
+    //Pour Vérifier si le navigateur supporte cette fonctionnalité.
+
+    if (window.File && window.FileReader && window.FileList && window.Blob) {
+      // Great success! All the File APIs are supported.
+    } else {
+      alert("The File APIs are not fully supported in this browser.");
+    }
+
+    function handleFileSelect(evt) {
+      var files = evt.target.files; // FileList object
+
+      // files is a FileList of File objects. List some properties.
+      var output = [];
+      for (var i = 0, f;
+        (f = files[i]); i++) {
+        output.push(
+          "<li><strong>",
+          escape(f.name),
+          "</strong> (",
+          f.type || "n/a",
+          ") - ",
+          f.size,
+          " bytes, last modified: ",
+          f.lastModifiedDate ?
+          f.lastModifiedDate.toLocaleDateString() :
+          "n/a",
+          "</li>"
+        );
+      }
+      document.getElementById("list").innerHTML =
+        "<ul>" + output.join("") + "</ul>";
+    }
+
+    document
+      .getElementById("files")
+      .addEventListener("change", handleFileSelect, false);
+  </script>
+
+  <script src="../server/createCharacters.js"></script>
+</body>
+
+</html>
