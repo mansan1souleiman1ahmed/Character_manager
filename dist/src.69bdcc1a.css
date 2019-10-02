@@ -1,0 +1,2 @@
+body{margin:0;padding:0;display:flex;flex-direction:column}header{order:1;margin-bottom:20px;widows:100%;background-color:red}#list-display{order:2;width:100%;display:flex;flex-wrap:wrap;flex-direction:row}.button-delete{order:3}#list-display,ul{list-style-type:none}#list{background-color:red}
+/*# sourceMappingURL=/src.69bdcc1a.css.map */

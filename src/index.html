@@ -1,23 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" type="text/css" href="index.css" />
-    <title>Document</title>
-  </head>
 
-  <body>
-    <header>
-      <h1>Characters</h1>
-      <button><a href="create-character.html">Create</a></button>
-    </header>
-    <div id="list-display"></div>
-    <div class="button-delete">
-      <button>Delete</button>
-    </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" type="text/css" href="index.css" />
+  <title>Document</title>
+</head>
 
-    <script src="../server/index.js"></script>
-  </body>
+<body>
+  <header class="navbar-fixed-top cbp-af-header">
+    <nav class="nav">
+      <input type="checkbox" class="nav__cb" id="menu-cb" />
+      <div class="nav__content">
+        <ul class="nav__items">
+          <li class="nav__item">
+            <span class="nav__item-text"><a href='create-character.html'> Create</a>
+
+            </span>
+          </li>
+        </ul>
+      </div>
+      <label class="nav__btn" for="menu-cb"></label>
+    </nav>
+  </header>
+  <div id="list-display"></div>
+  <div class="button-delete">
+
+  </div>
+
+  <script src="../server/index.js"></script>
+  <script src="../server/edit.js"></script>
+  <script src="../server/delete.js"></script>
+  <script src="../server/view.js"></script>
+</body>
+
 </html>
